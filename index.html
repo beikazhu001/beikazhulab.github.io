@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Zhu Lab | Saint Louis University</title>
+    <style>
+        /* --- CSS STYLES --- */
+        :root {
+            --primary-color: #003DA5; /* SLU Blue */
+            --text-color: #333333;
+            --bg-color: #f8f9fa;
+            --white: #ffffff;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 20px 60px; /* Top padding ensures navbar doesn't cover content */
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        /* Hero Section */
+        #home {
+            text-align: center;
+            padding: 150px 20px 100px;
+            background-color: var(--white);
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .hero-placeholder {
+            width: 100%;
+            height: 300px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            font-style: italic;
+        }
+
+        /* Publications List */
+        .pub-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .pub-list li {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .pub-list a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .pub-list a:hover {
+            text-decoration: underline;
+        }
+
+        /* Logos */
+        .sponsor-logos {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .logo-placeholder {
+            width: 150px;
+            height: 80px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#home" class="logo">Zhu Lab</a>
+        <ul class="nav-links">
+            <li><a href="#research">Research</a></li>
+            <li><a href="#people">People</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#join">Join Us</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <div class="hero-placeholder">[ Microglia / White Matter Image Placeholder ]</div>
+        <h1>The Zhu Lab</h1>
+        <p style="font-size: 1.4rem; font-weight: 500;">The Zhu Lab investigates how microglia maintain white matter integrity in neurodegenerative diseases like Alzheimer's.</p>
+    </section>
+
+    <section id="research">
+        <h2>Research</h2>
+        <p>The complex cognitive functions of the human brain rely not only on the survival of neurons but also on the precise, synchronized transmission of information across the vast white matter networks that connect them. While Alzheimer’s disease (AD) is traditionally defined by plaques and tangles, white matter degeneration has been recently recognized as an early and robust predictor of cognitive decline that often precedes gray matter atrophy. My lab will investigate a critical but understudied aspect of this pathology: How do microglia maintain white matter integrity under the metabolic stress of neurodegeneration?</p>
+    </section>
+
+    <section id="people">
+        <h2>People</h2>
+        <h3>Beika Zhu, Ph.D.</h3>
+        <p><em>Principal Investigator</em></p>
+        <p>My career in neuroscience began at the Hong Kong University of Science and Technology, where I completed my Ph.D. in Dr. Karl Herrup's lab in 2019. During my subsequent postdoctoral training in Dr. Xianhua Piao's lab at UCSF, I became fascinated by neuroimmunology, specifically how microglial responses and diverse cellular states drive Alzheimer's disease pathology. I joined Saint Louis University as an Assistant Professor in January 2026 to establish a research program focused on the microglial regulation of myelin integrity in Alzheimer's disease. When I'm not in the lab, you can usually find me exploring local art museums or cooking, with a special love for crafting Cantonese soups.</p>
+    </section>
+
+    <section id="publications">
+        <h2>Selected Publications</h2>
+        <ul class="pub-list">
+            <li>
+                Zhu B.*, Li T.*, Rodrigues B.V.*, Piller M.V., Call C.L., Mogha A., Belloso-Iguerategui A., Chiou B., Schmidt R., Wangzhou A., Thurber A., Dee M., Larson C., Monk K., Piao X. "Pre-myelinating oligodendrocyte ADGRG1 is required for axon ensheathment and CNS myelin formation" <em>bioRxiv</em>, 2026. (* contributed equally to this study) <br>
+                <a href="https://doi.org/10.64898/2026.01.26.701898" target="_blank">doi:10.64898/2026.01.26.701898</a>
+            </li>
+            <li>
+                Zhu B., WZ A., Yu D., Li T., Schmidt R., De Florencio S., Chao L., Thurber A., Zhou M., Msheik Z., Perez Y., Grinberg L., Spina S., Ransohoff R., Kriegstein A., Seeley W., Nowakowski T., Piao X. "G protein-coupled receptor ADGRG1 drives a protective microglial state in Alzheimer's disease through MYC activation" <em>Neuron</em>, 2025. <br>
+                <a href="https://doi.org/10.1016/j.neuron.2025.06.020" target="_blank">doi:10.1016/j.neuron.2025.06.020</a><br>
+                <em>Featured by: <a href="https://lnkd.in/eNyfx875" target="_blank">UCSF News Press</a> | <a href="https://lnkd.in/ejc7wg2w" target="_blank">Science Daily</a></em>
+            </li>
+            <li>
+                Zhu B., Thurber A., Piao X. "Protocol for in vitro phagocytosis assay for primary mouse microglia and human embryonic stem cell-derived microglia" <em>STAR Protocols</em>, 2025. <br>
+                <a href="https://doi.org/10.1016/j.xpro.2025.104219" target="_blank">doi:10.1016/j.xpro.2025.104219</a>
+            </li>
+            <li>
+                Zhu B.*, Luo R.*, Jin P.*, Li T., Oak H., Monk K., Lak P., Shoichet B., Tall G., Piao X. "GAIN domain-mediated cleavage is required for activation of GPR56 by its natural ligands and a small-molecule agonist" <em>Journal of Biological Chemistry</em>, 294: 19246-19254, 2019. (* contributed equally to this study) <br>
+                <a href="https://doi.org/10.1074/jbc.RA119.008234" target="_blank">doi:10.1074/jbc.RA119.008234</a>
+            </li>
+            <li>
+                Zhu B., Li Z., Qian P., Herrup K. "Marine bacterial extracts as a new rich source of drugs against Alzheimer’s disease" <em>Journal of Neurochemistry</em>, 152: 493-508, 2019. <br>
+                <a href="https://doi.org/10.1111/jnc.14847" target="_blank">doi:10.1111/jnc.14847</a>
+            </li>
+            <li>
+                Zhu B., Zhang Y., Herrup K. "Testing the neuroprotective properties of PCSO-524 using a neuronal cell cycle suppression assay" <em>Marine Drugs</em>, 17: 79, 2019. <br>
+                <a href="https://doi.org/10.3390/md17020079" target="_blank">doi:10.3390/md17020079</a>
+            </li>
+        </ul>
+    </section>
+
+    <section id="news">
+        <h2>News</h2>
+        <ul>
+            <li><strong>January 2026:</strong> The Zhu Lab officially opens its doors at Saint Louis University! We are actively setting up our space and recruiting passionate scientists to join the team.</li>
+        </ul>
+    </section>
+
+    <section id="join">
+        <h2>Join Us</h2>
+        <p>We are a new, highly collaborative research group at Saint Louis University. We are currently recruiting motivated graduate students and postdoctoral researchers who are passionate about neuroimmunology, white matter integrity, and decoding Alzheimer's disease pathology.</p>
+        <p>If you are interested in exploring how diverse microglial states drive neurodegeneration, we would love to hear from you! Please reach out to Dr. Zhu at <strong><a href="mailto:beika.zhu@health.slu.edu" style="color: var(--primary-color);">beika.zhu@health.slu.edu</a></strong> with a brief statement of your research interests and your CV.</p>
+    </section>
+
+    <section id="acknowledgement">
+        <h2 style="text-align: center; border-bottom: none;">Acknowledgements & Support</h2>
+        <p style="text-align: center;">The Zhu Lab's research is generously supported by:</p>
+        <div class="sponsor-logos">
+            <div class="logo-placeholder">[ NIA / NIH Logo ]</div>
+            <div class="logo-placeholder">[ BrightFocus Logo ]</div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Beika Zhu Lab. All rights reserved. | Saint Louis University</p>
+    </footer>
+
+</body>
+</html>
