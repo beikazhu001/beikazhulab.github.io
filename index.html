@@ -174,6 +174,53 @@
             color: var(--white);
             margin-top: 50px;
         }
+        /* Slideshow Container */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            height: 400px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #000;
+        }
+        
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .hero-slide.active {
+            opacity: 1;
+        }
+        
+        /* Slideshow Arrows */
+        .slide-prev, .slide-next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: auto;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            transition: 0.3s;
+            user-select: none;
+            background-color: rgba(0,0,0,0.3);
+            border-radius: 3px;
+            text-decoration: none;
+        }
+        
+        .slide-next { right: 0; border-radius: 3px 0 0 3px; }
+        .slide-prev { left: 0; border-radius: 0 3px 3px 0; }
+        .slide-prev:hover, .slide-next:hover { background-color: rgba(0,0,0,0.8); color: white; }
     </style>
 </head>
 <body>
@@ -191,10 +238,17 @@
 
   <section id="home">
         
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 30px;">
-            <img src="microglia.png" alt="Microglia" style="width: 100%; height: 300px; object-fit: cover; border-radius: 8px;">
-            <img src="neuron.png" alt="Neuron" style="width: 100%; height: 300px; object-fit: cover; border-radius: 8px;">
-            </div>
+        <div class="slideshow-container">
+            <img class="hero-slide active" src="microglia.png" alt="Microglia">
+            <img class="hero-slide" src="neuron.png" alt="Neuron">
+            
+            <a class="slide-prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="slide-next" onclick="changeSlide(1)">&#10095;</a>
+        </div>
+
+        <h1>Zhu Lab</h1>
+        <p style="font-size: 1.4rem; font-weight: 500;">We investigate how microglia maintain white matter integrity in neurodegenerative diseases like Alzheimer's.</p>
+    </section>
 
         <h1>Zhu Lab</h1>
         <p style="font-size: 1.4rem; font-weight: 500;">We investigate how microglia maintain white matter integrity in neurodegenerative diseases like Alzheimer's.</p>
@@ -298,6 +352,36 @@
     <footer>
         <p>&copy; 2026 Beika Zhu Lab. All rights reserved. | <a href="https://www.slu.edu/medicine/medical-education/graduate-programs/biomedical-sciences/pharmacology-physiology/index.php" target="_blank" style="color: var(--white); text-decoration: underline;">Department of Pharmacology & Physiology, Saint Louis University</a></p>
     </footer>
+<script>
+        let slideIndex = 0;
+        let slides = document.querySelectorAll(".hero-slide");
+        let slideInterval;
 
+        function showSlides(n) {
+            slides.forEach(slide => slide.classList.remove("active"));
+            slideIndex = (n + slides.length) % slides.length;
+            slides[slideIndex].classList.add("active");
+        }
+
+        function changeSlide(n) {
+            showSlides(slideIndex + n);
+            resetInterval();
+        }
+
+        function nextSlide() {
+            changeSlide(1);
+        }
+
+        function resetInterval() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 5000); // Changes image every 5 seconds
+        }
+
+        // Start the slideshow when the page loads
+        if(slides.length > 0) {
+            showSlides(0);
+            resetInterval();
+        }
+    </script>
 </body>
 </html>
