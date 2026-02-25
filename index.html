@@ -336,19 +336,19 @@
     </section>
 
   <section id="join">
-        <h2>Join Us</h2>
-        
-        <h3 style="color: var(--primary-color); font-size: 1.3rem;">Postdoctoral Fellows</h3>
-        <p>We are seeking creative, motivated individuals with a Ph.D. and/or M.D. and a strong background in one or more of the following areas: molecular or cellular neuroscience, neuroimmunology, glial biology, computational biology/bioinformatics, or mouse models of neurodegeneration. Ideal candidates are team-oriented and collaborative, with a strong publication record and the ability to lead independent projects while contributing to an interdisciplinary research environment. To apply, please send your CV, a brief statement of research interests, and contact information for 2-3 references to <strong><a href="mailto:beika.zhu@health.slu.edu" style="color: var(--primary-color);">beika.zhu@health.slu.edu</a></strong>.</p>
+    <h2>Join Us</h2>
+    
+    <h3 style="color: var(--primary-color); font-size: 1.3rem;">Postdoctoral Fellows</h3>
+    <p>We are seeking creative, motivated individuals with a Ph.D. and/or M.D. and a strong background in one or more of the following areas: molecular or cellular neuroscience, neuroimmunology, glial biology, computational biology/bioinformatics, or mouse models of neurodegeneration. Ideal candidates are team-oriented and collaborative, with a strong publication record and the ability to lead independent projects while contributing to an interdisciplinary research environment. To apply, please send your CV, a brief statement of research interests, and contact information for 2-3 references to <span class="email-shield"></span>.</p>
 
-        <h3 style="color: var(--primary-color); font-size: 1.3rem; margin-top: 30px;">Research Assistants</h3>
-        <p>We welcome applications from detail-oriented, enthusiastic individuals with a bachelor’s degree or higher in neuroscience, biology, bioengineering, or a related field. Prior experience in molecular biology, mouse handling, cell culture, tissue sectioning, or immunohistochemistry is preferred. We encourage applications from both recent graduates seeking research experience and individuals with substantial prior experience. To apply, please send your CV, a brief statement of research interests, and contact information for 2-3 references to <strong><a href="mailto:beika.zhu@health.slu.edu" style="color: var(--primary-color);">beika.zhu@health.slu.edu</a></strong>.</p>
+    <h3 style="color: var(--primary-color); font-size: 1.3rem; margin-top: 30px;">Research Assistants</h3>
+    <p>We welcome applications from detail-oriented, enthusiastic individuals with a bachelor’s degree or higher in neuroscience, biology, bioengineering, or a related field. Prior experience in molecular biology, mouse handling, cell culture, tissue sectioning, or immunohistochemistry is preferred. We encourage applications from both recent graduates seeking research experience and individuals with substantial prior experience. To apply, please send your CV, a brief statement of research interests, and contact information for 2-3 references to <span class="email-shield"></span>.</p>
 
-        <h3 style="color: var(--primary-color); font-size: 1.3rem; margin-top: 30px;">Graduate Students</h3>
-        <p>We welcome rotation students from Saint Louis University Ph.D. or M.D./Ph.D. program. If you are interested in exploring how microglia regulate myelin integrity in neurodegenerative diseases, please email Dr. Zhu with your CV and a brief statement of research interests.</p>
+    <h3 style="color: var(--primary-color); font-size: 1.3rem; margin-top: 30px;">Graduate Students</h3>
+    <p>We welcome rotation students from Saint Louis University Ph.D. or M.D./Ph.D. program. If you are interested in exploring how microglia regulate myelin integrity in neurodegenerative diseases, please email <span class="email-shield"></span> with your CV and a brief statement of research interests.</p>
 
-        <h3 style="color: var(--primary-color); font-size: 1.3rem; margin-top: 30px;">Undergraduate and Medical Students</h3>
-        <p>We are always looking for passionate undergraduate and medical students to join our research efforts. Please email Dr. Zhu if you are interested in gaining hands-on laboratory experience.</p>
+    <h3 style="color: var(--primary-color); font-size: 1.3rem; margin-top: 30px;">Undergraduate and Medical Students</h3>
+    <p>We are always looking for passionate undergraduate and medical students to join our research efforts. Please email <span class="email-shield"></span> if you are interested in gaining hands-on laboratory experience.</p>
     </section>
 
     <section id="acknowledgement">
@@ -394,5 +394,22 @@
             resetInterval();
         }
     </script>
+    <script>
+    // This script protects your email from basic spam bots
+    document.addEventListener("DOMContentLoaded", function() {
+        // Break the email into parts so bots can't read it in the raw code
+        var user = "beika.zhu";
+        var domain = "health.slu.edu";
+        var fullEmail = user + "@" + domain;
+        
+        // Find all the blank placeholder spans we created
+        var emailSpans = document.querySelectorAll(".email-shield");
+        
+        // Inject the clickable email address into each placeholder for human visitors
+        emailSpans.forEach(function(span) {
+            span.innerHTML = '<a href="mailto:' + fullEmail + '" style="color: var(--primary-color); font-weight: bold; text-decoration: none;">' + fullEmail + '</a>';
+        });
+    });
+</script>
 </body>
 </html>
